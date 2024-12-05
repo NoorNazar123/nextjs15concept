@@ -1,7 +1,8 @@
 import React from 'react';
 
-const Page = ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+const Page = async ({ params }: { params: { id: string } }) => {
+  const { id } = await params;
+  // const { id } = React.use(params);
 
   const users = [
     { id: 1, fname: "Hammad", dec: "He is a programmer" },

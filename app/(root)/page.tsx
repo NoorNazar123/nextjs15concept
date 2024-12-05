@@ -1,12 +1,22 @@
+import { error } from "console";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+
+  const res = await fetch("https://api.github.com/users/NoorNazar123");
+
+  if (!res.ok) throw new Error("User is not found!")
+
+  const userDetails = await res.json();
+  console.log(userDetails); 
+
+
   return (
     <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-gradient-to-r from-blue-500 to-purple-500 font-[family-name:var(--font-geist-sans)]">
-      
+
       {/* Header */}
       <h1 className="text-4xl font-extrabold text-white text-center mb-8">
-        Hello, Next.js!
+        {userDetails.bio}
       </h1>
 
       {/* Image Section */}
