@@ -15,7 +15,7 @@ const Users = () => {
 
                     <ul key={user.id} className="bg-white shadow-md rounded-lg p-6 w-80 space-y-4">
                         <li className="text-lg font-medium text-blue-600 hover:underline">
-                            <Link href={`/users/${user.id}`}>{user.fname}</Link>
+                            <Link href={`/dashboard/users/${user.id}`}>{user.fname}</Link>
                         </li>
                     </ul>
                 ))
